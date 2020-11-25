@@ -24,7 +24,8 @@ pool.on('connect', () => console.log('connected to db'));
 
 const getProducts = (request, response) => {
   const category_id = parseInt(request.query.category)
-  var query = 'SELECT * FROM `products` ORDER BY id ASC'
+  // var query = 'SELECT * FROM `products` ORDER BY id ASC'
+  var query = 'SELECT table_schema,table_name FROM information_schema.tables'
   var params = []
   if(category_id > 0){
     query = 'SELECT * FROM `products` WHERE category_id = $1 ORDER BY id ASC'
