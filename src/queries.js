@@ -24,7 +24,8 @@ pool.on('connect', () => console.log('connected to db'));
 
 const getProducts = (request, response) => {
   const category_id = parseInt(request.query.category)
-  var query = 'SELECT * FROM shop.products ORDER BY id ASC'
+  // var query = 'SELECT * FROM shop.products ORDER BY id ASC'
+  var query = 'SELECT * FROM pg_catalog.pg_tables'
   var params = []
   if(category_id > 0){
     query = 'SELECT * FROM shop.products WHERE category_id = $1 ORDER BY id ASC'
