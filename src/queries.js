@@ -33,7 +33,7 @@ const getProducts = (request, response) => {
   pool.query(query, params, (error, results) => {
     if (error) {
       console.log(error)
-      response.status(500).json("oops")
+      response.status(500).json("Error:" + error)
     } else {
       response.status(200).json(results.rows)
     }
