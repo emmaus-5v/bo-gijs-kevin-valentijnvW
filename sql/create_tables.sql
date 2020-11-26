@@ -1,8 +1,13 @@
 DROP TABLE IF EXISTS products; 
 CREATE TABLE products (
-  ID SERIAL PRIMARY KEY,
-  code VARCHAR(15),
-  name VARCHAR(255),
-  description TEXT,
-  price NUMERIC(10, 2)
+  id SERIAL PRIMARY KEY,
+  user_id SMALLINT,
+  datum_plaatsing TIMESTAMP,
+  naam TEXT,
+  beschrijving TEXT,
+  veiling_start TIMESTAMP,
+  veiling_eind TIMESTAMP,
+  minimum_prijs NUMERIC(10,2),
+  category_id SMALLINT
+  
 );
