@@ -1,6 +1,5 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-let ejs = require('ejs');
 const app = express()
 const db = require('./queries')
 const port = process.env.PORT || 3000;
@@ -14,11 +13,9 @@ app.use(
 )
 
 let people = ['geddy', 'neil', 'alex'];
-let html = ejs.render('<%= people.join(", "); %>', {people: people});
 
 app.get('/', (_request, response) => {
-  // response.redirect('index.html');
-  app.render(html);
+  response.redirect('index.html');
 })
 
 app.get('/api/categories', db.getCategories)
