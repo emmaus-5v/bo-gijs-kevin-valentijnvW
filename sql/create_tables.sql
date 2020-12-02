@@ -6,3 +6,10 @@ CREATE TABLE products (
   description TEXT,
   price NUMERIC(10, 2)
 ); 
+
+DROP TABLE IF EXISTS categories; 
+CREATE TABLE categories (
+  ID SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  description TEXT,
+); 
