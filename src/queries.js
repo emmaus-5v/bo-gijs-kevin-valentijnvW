@@ -43,26 +43,10 @@ const getProducts = (request, response) => {
 const getCategories = (request, response) => {
   const category_id = parseInt(request.query.category)
   var query = 'SELECT * FROM categories ORDER BY id ASC'
-  var params = []
-  if(category_id > 0){
-    query = 'SELECT * FROM categories ORDER BY id ASC'
-  }
-  pool.query(query, undefined, (error, results) => {
+  pool.query(query, (error, results) => {
     if (error) {
       console.log(error)
       response.status(500).json("Error:" + error)
-    } else {
-      response.status(200).json(results.rows)
-    }
-  })
-}
-
-const getCategories = (_request, response) => {
-  // TODO: change query to make it return categories
-  pool.query('SELECT * FROM products ORDER BY id ASC', (error, results) => {
-    if (error) {
-      console.log(error)
-      response.status(500).json("oops")
     } else {
       response.status(200).json(results.rows)
     }
