@@ -41,8 +41,7 @@ const getProducts = (request, response) => {
 }
 
 const getCategories = (request, response) => {
-  const category_id = parseInt(request.query.category)
-  var query = 'SELECT * FROM categories ORDER BY id ASC'
+  var query = 'SELECT * FROM categories'
   pool.query(query, (error, results) => {
     if (error) {
       console.log(error)
