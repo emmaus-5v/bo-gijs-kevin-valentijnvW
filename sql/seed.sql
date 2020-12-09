@@ -208,3 +208,8 @@ Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan fe
 insert into products (name, description, code, price) values ('The Four Feathers', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '704137368-1', 13.5);
 insert into products (name, description, code, price) values ('First Daughter', 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.
 Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', '637276459-8', 11.5);
+
+insert into categories (name, description) values ('Categorie 1', 'hallo');
+insert into categories (name, description) values ('Categorie 2', 'hallo');
+insert into categories (name, description) values ('Categorie 3', 'hallo');
+insert into categories (name, description) values ('Categorie 4', 'hallo');

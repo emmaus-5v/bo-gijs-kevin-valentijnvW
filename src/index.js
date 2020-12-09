@@ -12,8 +12,6 @@ app.use(
   })
 )
 
-let people = ['geddy', 'neil', 'alex'];
-
 app.get('/', (_request, response) => {
   response.redirect('index.html');
 })
