@@ -9,7 +9,7 @@
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">Shop</a>
+		<a class="navbar-brand" href="#">Arnolds</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -44,13 +44,14 @@
 
 		<div class="col-sm">
 			<div class="card" onclick="openCategoryPage(this)">
-				<h5 class="card-header product_title"></h5>
-				<img width="200" class="product_image card-img-top">
+				<h5 class="card-header category_title"></h5>
+				<img width="200" class="category_image card-img-top">
 				<div class="card-body">
-					<p class="product_description card-text"></p>
-					<ul class="product-properties">
+					<p class="category_description card-text"></p>
+					<ul class="category-properties">
 					</ul>
-				</div>
+        </div>
+        <input class="category_id" type="hidden" name="id" data-json="">
 			</div>
 		</div>
 	</template>
@@ -72,16 +73,17 @@
         request.onload = function () {
             var data = JSON.parse(this.response)
             if (request.status >= 200 && request.status < 400) {
-              data.forEach((product) => {
+              data.forEach((category) => {
 
                 const clone = template.content.cloneNode(true);
-                var name = product.name.substr(0, 35)
-                if(name.length < product.name.length) {
+                var name = category.name.substr(0, 35)
+                if(name.length < category.name.length) {
                   name = name + '...'
                 }
-                clone.querySelector(".product_title").textContent = name
-                clone.querySelector(".product_description").textContent =`${product.description.substr(0, 100)}...`
-                // clone.querySelector(".product_image").src =`/images/${product.id}.jpg`
+                clone.querySelector(".category_title").textContent = name
+                clone.querySelector(".category_description").textContent =`${category.description.substr(0, 100)}...`
+                clone.querySelector(".category_image").src =`/images/categories/${category.id}.jpg`
+                clone.querySelector(".category_id").value = category.id
 
                 container.appendChild(clone)
 

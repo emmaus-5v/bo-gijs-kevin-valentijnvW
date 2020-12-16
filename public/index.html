@@ -20,7 +20,7 @@
 		</div>
 	</div>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">Shop</a>
+		<a class="navbar-brand" href="#">Arnolds</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -42,10 +42,11 @@
 	</nav>
 	<main id="index">
 		<div class="container">
-			<h5>Artikelen</h5>
-			<p>Hier zie je een lijst met artikelen die je bij mij kunt bestellen.</p>
+			<h5>Welkom!</h5>
+			<p>Hier zie je een lijst met alle artikelen die je bij ons kunt bestellen.</p>
 			<p>klik op een artikel voor meer informatie<p>
-					<p>klik op de "winkelwagentje" om het artikel in je winkelwagen te stoppen</p>
+      <p>klik op de "winkelwagentje" om het artikel in je winkelwagen te stoppen</p>
+      <p>Je kunt natuurlijk ook per categorie artikelen bekijken. Klik <a href="categories.html">hier</a> om alle categorieën te bekijken.</p>
 		</div>
 	</main>
 	<footer>
@@ -104,7 +105,7 @@
                 clone.querySelector(".product_code").textContent = product.code
                 clone.querySelector(".product_id").value = product.id
                 clone.querySelector(".product_id").dataset.json = JSON.stringify(product)
-                clone.querySelector(".product_image").src =`/images/${product.id}.jpg`
+                clone.querySelector(".product_image").src =`/images/products/${product.id}.jpg`
 
                 container.appendChild(clone)
 
