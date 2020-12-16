@@ -5,7 +5,7 @@ CREATE TABLE products (
   category_id INT,
   name VARCHAR(255),
   description TEXT,
-  price NUMERIC(10, 2)
+  price NUMERIC(20, 2)
 ); 
 
 DROP TABLE IF EXISTS categories; 
